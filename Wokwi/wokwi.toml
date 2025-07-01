@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'C:\source\game-deck\Wokwi\sketch.ino'
+elf = 'build/example_app.elf'
