@@ -629,11 +629,18 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)..\LvglPlatform\lvgl\src\widgets\tileview\lv_tileview_private.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\LvglPlatform\lvgl\src\widgets\win\lv_win.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\LvglPlatform\lvgl\src\widgets\win\lv_win_private.h" />
+    <ClInclude Include="app_events.h" />
+    <ClInclude Include="app_events_helpers.h" />
+    <ClInclude Include="app_state.h" />
+    <ClInclude Include="connectors.h" />
+    <ClInclude Include="log.h" />
     <ClInclude Include="lv_conf.h" />
+    <ClInclude Include="state_connector.h" />
     <ClInclude Include="ui\screens\ui_Screen1.h" />
     <ClInclude Include="ui\ui.h" />
     <ClInclude Include="ui\ui_events.h" />
     <ClInclude Include="ui\ui_helpers.h" />
+    <ClInclude Include="ui_connectors.h" />
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="LvglWindowsSimulator.manifest" />
@@ -3623,13 +3630,19 @@
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
+    <ClCompile Include="app_events.cpp" />
+    <ClCompile Include="app_events_helpers.cpp" />
+    <ClCompile Include="app_state.cpp" />
+    <ClCompile Include="connectors.cpp" />
     <ClCompile Include="LvglWindowsSimulator.cpp" />
+    <ClCompile Include="state_connector.cpp" />
     <ClCompile Include="ui\components\ui_comp_hook.c" />
     <ClCompile Include="ui\fonts\ui_font_Number.c" />
     <ClCompile Include="ui\screens\ui_Screen1.c" />
     <ClCompile Include="ui\ui.c" />
     <ClCompile Include="ui\ui_events.c" />
     <ClCompile Include="ui\ui_helpers.c" />
+    <ClCompile Include="ui_connector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)..\LvglPlatform\freetype\.clang-format" />

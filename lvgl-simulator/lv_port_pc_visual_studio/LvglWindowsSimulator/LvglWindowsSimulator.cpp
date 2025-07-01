@@ -1,4 +1,8 @@
-﻿#include <Windows.h>
+﻿#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include <Windows.h>
 
 #include <LvglWindowsIconResource.h>
 
@@ -6,6 +10,44 @@
 #include "lvgl/examples/lv_examples.h"
 #include "lvgl/demos/lv_demos.h"
 #include "ui/ui.h"
+#include "app_events_helpers.h"
+#include "connectors.h"
+
+void my_key_event_cb(lv_event_t* e)
+{
+    uint32_t key = lv_event_get_key(e);
+
+    switch (key)
+    {
+    case 'u':
+        app_publish_volume_change(1, EVENT_SRC_CONTROL);
+        break;
+    case 'd':
+        app_publish_volume_change(-1, EVENT_SRC_CONTROL);
+        break;
+    }
+}
+
+void ui_disable_focus(void)
+{
+    lv_group_t* g = lv_group_get_default();
+    if (g) {
+        lv_group_remove_all_objs(g);
+    }
+
+    // отключим фокус для конкретных объектов
+    lv_obj_clear_flag(ui_Fan_Speed_Control, LV_OBJ_FLAG_CLICK_FOCUSABLE);
+}
+
+
+void sub_to_key_events() {
+    ui_disable_focus();
+
+    lv_obj_t* dummy = lv_btn_create(lv_scr_act());
+    lv_obj_set_size(dummy, 1, 1);
+    lv_obj_add_event_cb(dummy, my_key_event_cb, LV_EVENT_KEY, NULL);
+    lv_group_focus_obj(dummy);
+}
 
 int main()
 {
@@ -72,13 +114,18 @@ int main()
         return -1;
     }
 
+
     lv_indev_t* encoder_indev = lv_windows_acquire_encoder_indev(display);
     if (!encoder_indev)
     {
         return -1;
     }
 
+    connectors_init();
     ui_init();
+
+    sub_to_key_events();
+
     //lv_demo_widgets();
     //lv_demo_benchmark();
 
@@ -90,3 +137,7 @@ int main()
 
     return 0;
 }
+
+#ifdef __cplusplus
+}
+#endif

@@ -1781,6 +1781,25 @@
     <ClInclude Include="ui\screens\ui_Screen1.h">
       <Filter>ui\screens</Filter>
     </ClInclude>
+    <ClInclude Include="log.h">
+      <Filter>app</Filter>
+    </ClInclude>
+    <ClInclude Include="app_events.h">
+      <Filter>app</Filter>
+    </ClInclude>
+    <ClInclude Include="app_state.h">
+      <Filter>app\app_state</Filter>
+    </ClInclude>
+    <ClInclude Include="app_events_helpers.h">
+      <Filter>app</Filter>
+    </ClInclude>
+    <ClInclude Include="connectors.h">
+      <Filter>connectors</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_connectors.h">
+      <Filter>connectors\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="state_connector.h" />
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="LvglWindowsSimulator.manifest" />
@@ -4043,6 +4062,24 @@
     <ClCompile Include="ui\screens\ui_Screen1.c">
       <Filter>ui\screens</Filter>
     </ClCompile>
+    <ClCompile Include="app_events.cpp">
+      <Filter>app</Filter>
+    </ClCompile>
+    <ClCompile Include="app_state.cpp">
+      <Filter>app\app_state</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_connector.cpp">
+      <Filter>connectors\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="app_events_helpers.cpp">
+      <Filter>app</Filter>
+    </ClCompile>
+    <ClCompile Include="connectors.cpp">
+      <Filter>connectors</Filter>
+    </ClCompile>
+    <ClCompile Include="state_connector.cpp">
+      <Filter>connectors\state</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="freetype">
@@ -5406,6 +5443,27 @@
     </Filter>
     <Filter Include="ui\screens">
       <UniqueIdentifier>{2ce6b74a-b43c-49f2-ac91-1874c193d11a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="app">
+      <UniqueIdentifier>{f58b585d-fbad-4884-9597-185dac21b46e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="app\app_state">
+      <UniqueIdentifier>{af4ac8d0-658b-44f0-9ace-3ee3b6921953}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="connectors">
+      <UniqueIdentifier>{a7a1c6b7-513c-4279-8243-7ddd8966dcc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="connectors\ui">
+      <UniqueIdentifier>{1d830fb8-b950-4cbe-b18f-decf48f5d324}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="connectors\controls">
+      <UniqueIdentifier>{94926a3b-6fb8-4383-94b5-38c766c802bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="connectors\pc">
+      <UniqueIdentifier>{8113a14c-e2f7-4ced-975d-7a5e1e947a61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="connectors\state">
+      <UniqueIdentifier>{e1b5e3b8-a7f3-48bc-a47a-bc01d34dffdb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
